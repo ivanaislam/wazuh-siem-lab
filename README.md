@@ -17,11 +17,11 @@ This is my lab documentation for installing Wazuh SIEM on Ubuntu Server 22.04 us
 
 First i downloaded and installed Oracle VirtualBox from the official website.
 
-![virtualbox install](screenshots/image1.png)
+![virtualbox install](image1.png)
 
 Then i installed the VirtualBox Extension Pack.
 
-![extension pack](screenshots/image2.png)
+![extension pack](image2.png)
 
 ---
 
@@ -29,7 +29,7 @@ Then i installed the VirtualBox Extension Pack.
 
 I downloaded Ubuntu Server 22.04.5 LTS server install image.
 
-![ubuntu download](screenshots/image3.png)
+![ubuntu download](image3.png)
 
 I installed it in D drive because Wazuh takes a lot of disk space.
 
@@ -39,15 +39,15 @@ I installed it in D drive because Wazuh takes a lot of disk space.
 
 Open VirtualBox and select New to create a new VM.
 
-![new vm](screenshots/image4.png)
+![new vm](image4.png)
 
 Select the ubuntu iso image and set the folder location.
 
-![select iso](screenshots/image5.png)
+![select iso](image5.png)
 
 Uncheck the auto install box and click finish.
 
-![uncheck box](screenshots/image6.png)
+![uncheck box](image6.png)
 
 ---
 
@@ -55,11 +55,11 @@ Uncheck the auto install box and click finish.
 
 Select the VM and go to Settings.
 
-![settings](screenshots/image7.png)
+![settings](image7.png)
 
 Allocate base memory 4096 MB and CPU 2.
 
-![memory cpu](screenshots/image8.png)
+![memory cpu](image8.png)
 
 ---
 
@@ -67,17 +67,17 @@ Allocate base memory 4096 MB and CPU 2.
 
 Go to Network settings and configure port forwarding so we can connect via PuTTY.
 
-![network](screenshots/image9.png)
+![network](image9.png)
 
 Click the green icon twice to add port forwarding rules.
 
-![port forward](screenshots/image10.png)
+![port forward](image10.png)
 
 Fill in the port forwarding boxes:
 - SSH: Host port 2222 -> Guest port 22
 - HTTPS: Host port 443 -> Guest port 443
 
-![fill boxes](screenshots/image11.png)
+![fill boxes](image11.png)
 
 ---
 
@@ -85,27 +85,27 @@ Fill in the port forwarding boxes:
 
 Start the virtual machine.
 
-![start machine](screenshots/image12.png)
+![start machine](image12.png)
 
 Select language.
 
-![language](screenshots/image13.png)
+![language](image13.png)
 
 Set up your profile - username and password.
 
-![profile setup](screenshots/image14.png)
+![profile setup](image14.png)
 
 It takes 5 to 10 minutes to complete the installation.
 
-![installing](screenshots/image15.png)
+![installing](image15.png)
 
 Click Reboot Now when installation is done.
 
-![reboot](screenshots/image16.png)
+![reboot](image16.png)
 
 Press Enter after reboot and wait 2 minutes.
 
-![press enter](screenshots/image17.png)
+![press enter](image17.png)
 
 ---
 
@@ -113,7 +113,7 @@ Press Enter after reboot and wait 2 minutes.
 
 Minimize ubuntu and open PuTTY.
 
-![putty](screenshots/image18.png)
+![putty](image18.png)
 
 Enter the connection details:
 - Host Name: 127.0.0.1
@@ -122,11 +122,11 @@ Enter the connection details:
 
 Click Accept on the security alert.
 
-![accept](screenshots/image19.png)
+![accept](image19.png)
 
 Login with ubuntu username and password.
 
-![login](screenshots/image20.png)
+![login](image20.png)
 
 ---
 
@@ -150,20 +150,20 @@ Run the installation:
 sudo -E bash wazuh-install.sh -a -o
 ```
 
-![wazuh install start](screenshots/image21.png)
+![wazuh install start](image21.png)
 
 Give password and press enter. Wait 15 to 20 minutes for installation to complete.
 
-![installing wazuh](screenshots/image22.png)
+![installing wazuh](image22.png)
 
-![wazuh progress](screenshots/image23.png)
+![wazuh progress](image23.png)
 
 Wazuh has 3 main components that get installed:
 1. Wazuh Indexer
 2. Wazuh Manager (Server)
 3. Wazuh Dashboard
 
-![components installing](screenshots/image24.png)
+![components installing](image24.png)
 
 ---
 
@@ -175,7 +175,7 @@ After installation check that all services are running:
 sudo systemctl status wazuh-indexer wazuh-manager wazuh-dashboard --no-pager
 ```
 
-![services status](screenshots/image25.png)
+![services status](image25.png)
 
 ---
 
@@ -188,7 +188,7 @@ https://127.0.0.1
 
 Click Advanced and then click Proceed (because it uses a self-signed certificate).
 
-![browser warning](screenshots/image26.png)
+![browser warning](image26.png)
 
 Login with:
 - Username: admin
@@ -198,7 +198,7 @@ Login with:
 sudo cat ~/wazuh-install-files/wazuh-passwords.txt
 ```
 
-![login page](screenshots/image27.png)
+![login page](image27.png)
 
 ---
 
@@ -206,9 +206,9 @@ sudo cat ~/wazuh-install-files/wazuh-passwords.txt
 
 After successful login the Wazuh dashboard is fully working.
 
-![wazuh overview](screenshots/image28.png)
+![wazuh overview](image28.png)
 
-![endpoint security](screenshots/image29.png)
+![endpoint security](image29.png)
 
 The Wazuh SIEM is now fully deployed and running. It includes:
 
@@ -217,7 +217,7 @@ The Wazuh SIEM is now fully deployed and running. It includes:
 - Security Operations (GDPR, HIPAA, PCI DSS compliance)
 - Cloud Security monitoring
 
-![full dashboard](screenshots/image30.png)
+![full dashboard](image30.png)
 
 ---
 
